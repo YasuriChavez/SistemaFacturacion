@@ -45,14 +45,13 @@ namespace FacturacionSistema
                 case 3: // Corporativo
                     porcentajeDescuento = 0.15; break;
                 default:
-                    Console.WriteLine("Error: Tipo de cliente no válido. Use 1, 2 o 3.");
+                    Console.WriteLine("Error: Tipo de cliente no valido. Use 1, 2 o 3.");
                     return;
             }
-
             descuento = precioBase * porcentajeDescuento;
-            double precioDescuento = precioBase - descuento;
 
             //Tarea 3 - Calcular IGV y precio final
+            double precioDescuento = precioBase - descuento;
             igv = precioDescuento * 0.18;
             precioFinal = precioDescuento + igv;
 
