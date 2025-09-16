@@ -10,21 +10,25 @@ namespace FacturacionSistema
     {
         static void Main(string[] args)
         {
+            string nombreProducto;
+            int tipoCliente;
+            double precioBase, descuento, igv, precioFinal;
+
             Console.WriteLine("Sistema de Facturacion - Tienda de Tecnologia");
 
             //Tarea 1 - Capturar datos (producto, precio, tipo cliente)
-            string nombreProducto = "";
-            double precioBase = 0.0;
-            int tipoCliente = 0;
+            nombreProducto = "";
+            precioBase = 0.0;
+            tipoCliente = 0;
 
 
             //Tarea 2 - Calcular descuento segun tipo cliente
-            double descuento = 0.0;
+            descuento = 0.0;
 
 
             //Tarea 3 - Calcular IGV y precio final
-            double igv = 0.0;
-            double precioFinal = 0.0;
+            igv = 0.0;
+            precioFinal = 0.0;
 
 
             //Resultados
