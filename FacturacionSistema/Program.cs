@@ -14,33 +14,48 @@ namespace FacturacionSistema
             int tipoCliente;
             double precioBase, descuento, igv, precioFinal;
 
-            Console.WriteLine("Sistema de Facturacion - Tienda de Tecnologia");
+            Console.WriteLine("=== Sistema de Facturacion - Tienda de Tecnologia ===");
 
             //Tarea 1 - Capturar datos (producto, precio, tipo cliente)
             Console.WriteLine("Ingrese el nombre del producto: ");
             nombreProducto = Console.ReadLine();
+
             Console.WriteLine("Ingrese el precio base del producto: ");
-            precioBase = double.Parse(Console.ReadLine());
+            if(!double.TryParse(Console.ReadLine(), out precioBase) || precioBase <= 0)
+            {
+                Console.WriteLine("Error: Ingrese un precio valido.");
+                return;
+            }
+
             Console.WriteLine("Tipo de cliente : 1 = Frecuente, 2 = Nuevo , 3 = Corporativo");
             Console.WriteLine("Ingrese el tipo de cliente: ");
-            tipoCliente = int.Parse(Console.ReadLine());
+            if(!int.TryParse(Console.ReadLine(), out tipoCliente))
+            {
+                Console.WriteLine("Error: Debe ingresar un numero valido.");
+            }
 
             //Tarea 2 - Calcular descuento segun tipo cliente
+            double porcentajeDescuento;
             switch (tipoCliente)
             {
                 case 1: // Frecuente
-                    descuento = 0.10; break;
+                    porcentajeDescuento = 0.10; break;
                 case 2: // Nuevo
-                    descuento = 0.00; break;
+                    porcentajeDescuento = 0.00; break;
                 case 3: // Corporativo
-                    descuento = 0.15; break;
+                    porcentajeDescuento = 0.15; break;
                 default:
                     Console.WriteLine("Error: Tipo de cliente no válido. Use 1, 2 o 3.");
                     return;
             }
+
+            descuento = precioBase * porcentajeDescuento;
+            double precioDescuento = precioBase - descuento;
+
             //Tarea 3 - Calcular IGV y precio final
-            igv = 0.0;
-            precioFinal = 0.0;
+            igv = precioDescuento * 0.18;
+            precioFinal = precioDescuento + igv;
+
 
 
             //Resultados
