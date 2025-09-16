@@ -26,9 +26,18 @@ namespace FacturacionSistema
             tipoCliente = int.Parse(Console.ReadLine());
 
             //Tarea 2 - Calcular descuento segun tipo cliente
-            descuento = 0.0;
-
-
+            switch (tipoCliente)
+            {
+                case 1: // Frecuente
+                    descuento = 0.10; break;
+                case 2: // Nuevo
+                    descuento = 0.00; break;
+                case 3: // Corporativo
+                    descuento = 0.15; break;
+                default:
+                    Console.WriteLine("Error: Tipo de cliente no válido. Use 1, 2 o 3.");
+                    return;
+            }
             //Tarea 3 - Calcular IGV y precio final
             igv = 0.0;
             precioFinal = 0.0;
