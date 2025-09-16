@@ -17,10 +17,13 @@ namespace FacturacionSistema
             Console.WriteLine("Sistema de Facturacion - Tienda de Tecnologia");
 
             //Tarea 1 - Capturar datos (producto, precio, tipo cliente)
-            nombreProducto = "";
-            precioBase = 0.0;
-            tipoCliente = 0;
-
+            Console.WriteLine("Ingrese el nombre del producto: ");
+            nombreProducto = Console.ReadLine();
+            Console.WriteLine("Ingrese el precio base del producto: ");
+            precioBase = double.Parse(Console.ReadLine());
+            Console.WriteLine("Tipo de cliente : 1 = Frecuente, 2 = Nuevo , 3 = Corporativo");
+            Console.WriteLine("Ingrese el tipo de cliente: ");
+            tipoCliente = int.Parse(Console.ReadLine());
 
             //Tarea 2 - Calcular descuento segun tipo cliente
             descuento = 0.0;
