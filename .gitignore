@@ -1,0 +1,11 @@
+# Archivos temporales de Visual Studio
+.vs/
+*.user
+*.suo
+*.vscode/
+
+# Binarios y compilados
+bin/
+obj/
+Debug/
+Release/
